@@ -1,4 +1,8 @@
 package com.example.rawgapp.main.interactor
 
-class MainInteractor {
+import com.example.rawgapp.main.repository.MainRepository
+
+class MainInteractor(
+    val repository: MainRepository
+) {
 }

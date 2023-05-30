@@ -1,10 +1,11 @@
 package com.example.rawgapp.common.ui.diffUtil
 
 import androidx.recyclerview.widget.DiffUtil
+import com.example.rawgapp.main.model.GameModel
 
 class MyDiffUtil(
-    private val oldList: ,
-    private val newList:
+    private val oldList: MutableList<GameModel>,
+    private val newList: List<GameModel>
 ) : DiffUtil.Callback() {
 
     override fun getOldListSize() = oldList.size
