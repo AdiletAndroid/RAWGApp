@@ -7,13 +7,12 @@ import com.example.rawgapp.main.model.GameModel
 interface MainPageContract {
 
     interface View : MvpView {
-        fun showGames(article: List<GameModel>)
+        fun showGames(games: List<GameModel>)
         fun showLoading(isLoading: Boolean)
 
     }
 
-    interface Presenter: MvpPresenter<View> {
-        fun getGames(page: Int)
-        fun collectGamesFlow()
+    interface Presenter : MvpPresenter<View> {
+        fun getGamesFlow(page: Int)
     }
 }

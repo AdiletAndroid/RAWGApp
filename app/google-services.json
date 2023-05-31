@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "536035730574",
+    "project_id": "rawgapp",
+    "storage_bucket": "rawgapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536035730574:android:bafec198a4ec734b6fd5df",
+        "android_client_info": {
+          "package_name": "com.example.rawgapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvX7KikzkDA3059zSl9BfjMZCmi0t0TSQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

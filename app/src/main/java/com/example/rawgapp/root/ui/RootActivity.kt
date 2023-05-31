@@ -1,0 +1,33 @@
+package com.example.rawgapp.root.ui
+
+import android.os.Bundle
+import com.example.rawgapp.auth.ui.RegistrationFragment
+import com.example.rawgapp.common.mvp.BaseMvpActivity
+import com.example.rawgapp.databinding.ActivityRootBinding
+import com.example.rawgapp.main.ui.MainPageFragment
+import com.example.rawgapp.utils.extensions.replaceFragment
+import org.koin.android.ext.android.inject
+
+class RootActivity :
+    BaseMvpActivity<RootContract.View, RootContract.Presenter>(),
+    RootContract.View {
+
+    override val presenter: RootContract.Presenter by inject()
+
+    private lateinit var binding: ActivityRootBinding
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityRootBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        presenter.checkAuthorization()
+    }
+
+    override fun showRegistration() {
+        replaceFragment(RegistrationFragment.create())
+    }
+
+    override fun showMainPage() {
+        replaceFragment(MainPageFragment.create())
+    }
+}

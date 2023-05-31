@@ -1,4 +1,4 @@
-package com.example.rawgapp.utils.extentions
+package com.example.rawgapp.utils.extensions
 
 import androidx.annotation.AnimRes
 import androidx.annotation.IdRes

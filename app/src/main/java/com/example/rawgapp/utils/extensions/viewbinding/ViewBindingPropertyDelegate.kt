@@ -1,4 +1,4 @@
-package com.example.rawgapp.utils.extentions.viewbinding
+package com.example.rawgapp.utils.extensions.viewbinding
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver

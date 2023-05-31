@@ -1,9 +1,8 @@
-package com.example.rawgapp.utils.extentions.viewbinding
+package com.example.rawgapp.utils.extensions.viewbinding
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.viewbinding.ViewBinding
-import com.example.nytimesclean.utils.extentions.viewbinding.ViewBindingPropertyDelegate
 
 @PublishedApi
 internal class FragmentViewBindingPropertyDelegate<TBinding : ViewBinding>(
