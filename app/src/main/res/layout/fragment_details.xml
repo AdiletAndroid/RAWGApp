@@ -1,82 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/textColor"
-    android:orientation="vertical"
+    android:fillViewport="true"
     tools:context=".details.DetailsFragment">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/item_border"
-        app:navigationIcon="@drawable/ic_back">
+        android:background="@color/textColor">
 
-        <TextView
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/oswald_bold_italic"
-            android:text="@string/rawg"
+            android:background="@drawable/item_border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_back">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/oswald_bold_italic"
+                android:text="@string/rawg"
+                android:textColor="@color/textColor"
+                android:textSize="28sp" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundColor"
+            android:fontFamily="@font/oswald_regular_italic"
+            android:text="@string/game_name"
             android:textColor="@color/textColor"
-            android:textSize="28sp" />
-    </androidx.appcompat.widget.Toolbar>
+            android:padding="8dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <TextView
-        android:id="@+id/textViewName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/backgroundColor"
-        android:fontFamily="@font/oswald_regular_italic"
-        android:padding="12dp"
-        android:text="@string/game_name"
-        android:textColor="@color/textColor"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_gravity="center"
+            android:background="@color/backgroundColor"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewName"
+            tools:src="@tools:sample/avatars" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:layout_gravity="center"
-        android:background="@color/backgroundColor"
-        android:padding="4dp"
-        android:src="@drawable/ic_logo" />
+        <TextView
+            android:id="@+id/textViewRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundColor"
+            android:fontFamily="@font/oswald_regular"
+            android:text="@string/rating"
+            android:padding="8dp"
+            android:textColor="@color/textColor"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <TextView
-        android:id="@+id/textViewRating"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/backgroundColor"
-        android:fontFamily="@font/oswald_regular"
-        android:padding="4dp"
-        android:text="@string/rating"
-        android:textColor="@color/textColor"
-        android:textSize="14sp" />
+        <TextView
+            android:id="@+id/textViewRatingTop"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundColor"
+            android:fontFamily="@font/oswald_regular"
+            android:padding="8dp"
+            android:text="@string/reating_top"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewRating" />
 
-    <TextView
-        android:id="@+id/textViewReview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/backgroundColor"
-        android:fontFamily="@font/oswald_regular"
-        android:padding="4dp"
-        android:text="@string/review"
-        android:textColor="@color/textColor"
-        android:textSize="16sp" />
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            app:layout_constraintBottom_toBottomOf="@id/textViewRatingTop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewRatingTop"
+            app:layout_constraintTop_toTopOf="@id/textViewRatingTop"
+            tools:rating="5" />
 
-    <TextView
-        android:id="@+id/textViewDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/backgroundColor"
-        android:fontFamily="@font/oswald_regular"
-        android:gravity="end"
-        android:padding="4dp"
-        android:text="@string/released_date"
-        android:textColor="@color/textColor"
-        android:textSize="12sp" />
+        <TextView
+            android:id="@+id/textViewDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundColor"
+            android:fontFamily="@font/oswald_regular"
+            android:gravity="end"
+            android:padding="8dp"
+            android:text="@string/released_date"
+            android:textColor="@color/textColor"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewScreensots" />
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+        <TextView
+            android:id="@+id/textViewScreenshots"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundColor"
+            android:fontFamily="@font/oswald_regular_italic"
+            android:text="@string/screenshots"
+            android:textColor="@color/textColor"
+            android:padding="8dp"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewRatingTop" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewScreensots"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundColor"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewScreenshots"
+            tools:listitem="@layout/item_screenshots"
+            tools:visibility="visible" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

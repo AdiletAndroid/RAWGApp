@@ -1,10 +1,13 @@
 package com.example.rawgapp.root.ui
 
 import android.os.Bundle
+import android.view.Window
+import androidx.core.content.ContextCompat
+import com.example.rawgapp.R
 import com.example.rawgapp.auth.ui.RegistrationFragment
 import com.example.rawgapp.common.mvp.BaseMvpActivity
 import com.example.rawgapp.databinding.ActivityRootBinding
-import com.example.rawgapp.main.ui.MainPageFragment
+import com.example.rawgapp.game.ui.GamesFragment
 import com.example.rawgapp.utils.extensions.replaceFragment
 import org.koin.android.ext.android.inject
 
@@ -21,6 +24,7 @@ class RootActivity :
         setContentView(binding.root)
 
         presenter.checkAuthorization()
+        setStatusBarColor()
     }
 
     override fun showRegistration() {
@@ -28,6 +32,11 @@ class RootActivity :
     }
 
     override fun showMainPage() {
-        replaceFragment(MainPageFragment.create())
+        replaceFragment(GamesFragment.create())
+    }
+
+    override fun setStatusBarColor() {
+        val window: Window = window
+        window.statusBarColor = ContextCompat.getColor(this, R.color.statusBarColor)
     }
 }

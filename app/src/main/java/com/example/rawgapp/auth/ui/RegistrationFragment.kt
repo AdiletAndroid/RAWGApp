@@ -7,7 +7,7 @@ import androidx.annotation.StringRes
 import com.example.rawgapp.R
 import com.example.rawgapp.common.mvp.BaseMvpFragment
 import com.example.rawgapp.databinding.FragmentRegistrationBinding
-import com.example.rawgapp.main.ui.MainPageFragment
+import com.example.rawgapp.game.ui.GamesFragment
 import com.example.rawgapp.utils.extensions.replaceFragment
 import com.example.rawgapp.utils.extensions.viewbinding.viewBinding
 import org.koin.android.ext.android.inject
@@ -38,7 +38,7 @@ class RegistrationFragment :
     }
 
     override fun showMain() {
-        replaceFragment(MainPageFragment.create())
+        replaceFragment(GamesFragment.create())
     }
 
     override fun showError(@StringRes errorResId: Int) {

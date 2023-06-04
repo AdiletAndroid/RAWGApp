@@ -1,7 +1,7 @@
 package com.example.rawgapp.common.di
 
 import android.content.Context
-import com.example.rawgapp.main.api.MainPageApi
+import com.example.rawgapp.game.api.GamesPageApi
 import com.example.rawgapp.utils.constants.Constants.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -19,7 +19,7 @@ object CommonModule : InjectionModule {
             Retrofit.Builder().baseUrl(BASE_URL)
                 .client(get())
                 .addConverterFactory(GsonConverterFactory.create()).build()
-                .create(MainPageApi::class.java)
+                .create(GamesPageApi::class.java)
         }
         single {
             val interceptor = HttpLoggingInterceptor()

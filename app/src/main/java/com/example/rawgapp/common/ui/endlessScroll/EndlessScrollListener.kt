@@ -8,7 +8,6 @@ private const val VISIBLE_THRESHOLD = 10
 class EndlessScrollListener(
     private val layoutManager: GridLayoutManager,
     private val loadNextPage: (Int) -> Unit,
-    private val hasMore: Boolean
 ) : RecyclerView.OnScrollListener() {
 
     private var page = 1

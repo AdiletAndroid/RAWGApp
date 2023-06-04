@@ -3,7 +3,7 @@ package com.example.rawgapp
 import android.app.Application
 import com.example.rawgapp.auth.AuthModule
 import com.example.rawgapp.common.di.CommonModule
-import com.example.rawgapp.main.MainModule
+import com.example.rawgapp.game.GamesModule
 import com.example.rawgapp.root.RootModule
 import com.google.firebase.FirebaseApp
 import org.koin.android.ext.koin.androidContext
@@ -26,7 +26,7 @@ class App : Application() {
             modules(
                 listOf(
                     CommonModule.create(),
-                    MainModule.create(),
+                    GamesModule.create(),
                     RootModule.create(),
                     AuthModule.create()
                 )

@@ -7,6 +7,7 @@ interface RootContract {
     interface View : MvpView {
         fun showRegistration()
         fun showMainPage()
+        fun setStatusBarColor()
     }
 
     interface Presenter : MvpPresenter<View> {

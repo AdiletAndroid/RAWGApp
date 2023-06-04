@@ -16,4 +16,7 @@
     <string name="rating">Rating</string>
     <string name="suggestions">Suggestions</string>
     <string name="auth_error">Error while signing up</string>
+    <string name="released">Released</string>
+    <string name="reating_top">Reating top</string>
+    <string name="screenshots">Screenshots</string>
 </resources>
