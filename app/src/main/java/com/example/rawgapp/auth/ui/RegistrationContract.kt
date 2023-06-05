@@ -12,6 +12,7 @@ interface RegistrationContract {
     }
 
     interface Presenter : MvpPresenter<View> {
+        fun auth()
         fun signUp(email: String, password: String)
     }
 }

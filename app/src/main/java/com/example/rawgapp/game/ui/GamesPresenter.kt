@@ -8,15 +8,14 @@ import timber.log.Timber
 
 class GamesPresenter(
     private val interactor: GamesInteractor
-) : BasePresenter<GamesContract.View>(),
-    GamesContract.Presenter {
+) : BasePresenter<GamesContract.View>(), GamesContract.Presenter {
 
     override fun getGames(page: Int) {
         launch {
             try {
                 view?.showLoading(isLoading = true)
                 val games = interactor.getGames(page)
-                    view?.showGames(games)
+                view?.showGames(games)
             } catch (e: CancellationException) {
                 Timber.e(e.message)
             } catch (t: Throwable) {

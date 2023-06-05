@@ -33,6 +33,7 @@ class RegistrationFragment :
             val email = binding.editTextMail.text.toString()
             val password = binding.editTextPassword.text.toString()
             presenter.signUp(email, password)
+            presenter.auth()
 
         }
     }
